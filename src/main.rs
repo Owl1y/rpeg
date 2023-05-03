@@ -1,10 +1,18 @@
-// use byteorder::{BigEndian, ReadBytesExt};
-
+use std::collections::HashMap;
 
 fn main() {
-       
-    let x: () = 0xfff;
+    let mark_mapping = HashMap::from([
+        (0xffd8, "Start of Image"),
+        (0xffe0, "Application Default Header"),
+        (0xffdb, "Quantization Table"),
+        (0xffc0, "Start of Frame"),
+        (0xffc4, "Define Huffman Table"),
+        (0xffda, "Start of Scan"),
+        (0xffd9, "End of Image")
 
+    ]);
+
+    println!("{:?}", mark_mapping);
 }
 
 
